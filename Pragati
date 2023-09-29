@@ -1,0 +1,36 @@
+def read_employee_data(file_path):
+    employee_data = []
+    with open(file_path, 'r') as file:
+        for line in file:
+            employee_data.append(line.strip().split(','))  # Assuming the data is comma-separated
+    return employee_data
+def find_consecutive_days_employees(employee_data):
+    # Your code to analyze and find employees who meet this condition
+    pass
+def find_short_break_employees(employee_data):
+    # Your code to analyze and find employees who meet this condition
+    pass
+def find_long_shift_employees(employee_data):
+    # Your code to analyze and find employees who meet this condition
+    pass
+def main():
+    file_path = 'employee_data.txt'  # Replace with your file path
+    employee_data = read_employee_data(file_path)
+
+    print("Employees who worked for 7 consecutive days:")
+    consecutive_days_employees = find_consecutive_days_employees(employee_data)
+    for employee in consecutive_days_employees:
+        print(f"Name: {employee['name']}, Position: {employee['position']}")
+
+    print("\nEmployees with short breaks between shifts:")
+    short_break_employees = find_short_break_employees(employee_data)
+    for employee in short_break_employees:
+        print(f"Name: {employee['name']}, Position: {employee['position']}")
+
+    print("\nEmployees who worked for more than 14 hours in a single shift:")
+    long_shift_employees = find_long_shift_employees(employee_data)
+    for employee in long_shift_employees:
+        print(f"Name: {employee['name']}, Position: {employee['position']}")
+
+if __name__ == "__main__":
+    main()
